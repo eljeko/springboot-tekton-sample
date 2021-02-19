@@ -10,7 +10,7 @@ items:
       type: string
     steps:
     - args:
-      - oc start-build restservice-api --from-file=/workspace/source/restservice-api/target/restservice-rest-api-1.0.jar
+      - oc start-build restservice-api --from-file=/workspace/source/restservice/target/restservice-api-1.0.jar
         -n $(params.namespace) --wait
       command:
       - /bin/bash

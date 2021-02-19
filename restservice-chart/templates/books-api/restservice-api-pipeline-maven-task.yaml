@@ -11,7 +11,7 @@ spec:
     image: maven:3.6.0-jdk-8-slim
     command: ["/bin/bash", "-c"]      
     args:
-    - /usr/bin/mvn -f /workspace/source/restservice-java-rest-api/pom.xml -s /workspace/source/restservice-java-rest-api/custom-settings.xml clean package spring-boot:repackage
+    - /usr/bin/mvn -f /workspace/source/restservice/pom.xml -s /workspace/source/restservice/custom-settings.xml clean package spring-boot:repackage
 
 
 

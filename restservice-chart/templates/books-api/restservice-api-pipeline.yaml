@@ -14,11 +14,13 @@ items:
     - name: fetch-repository
       params:
       - name: url
-        value: https://github.com/eljeko/tekton-demo
+        value: https://github.com/eljeko/springboot-tekton-sample
       - name: deleteExisting
         value: "true"
       - name: subdirectory
         value: ""
+      - name: revision
+        value: "main"
       taskRef:
         kind: ClusterTask
         name: git-clone
