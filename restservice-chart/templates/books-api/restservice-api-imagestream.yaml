@@ -1,0 +1,11 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    app: restservice-api
+    app.kubernetes.io/component: restservice-api
+    app.kubernetes.io/instance: restservice-api  
+  name: restservice-api
+spec:
+  lookupPolicy:
+    local: false

@@ -1,0 +1,29 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: restservice-api
+    app.kubernetes.io/component: restservice-api
+    app.kubernetes.io/instance: restservice-api
+  name: restservice-api
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: restservice-api:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    binary: {}
+    type: Binary
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: redhat-openjdk18-openshift:1.8
+        namespace: openshift
+    type: Source
+  successfulBuildsHistoryLimit: 5

@@ -1,0 +1,13 @@
+Your {{ include "restservice-chart.name" . }} is installed/updated
+
+1. You may test the services with the following URLs after you build from source
+
+  SpringBoot ReST service   
+
+    To test it you can get the public url:
+  
+      oc get route restservice-api -o jsonpath='{.status.ingress[0].host}' --namespace {{ .Release.Namespace }}
+
+    And then add the service method path to test it, you may run this command to generate the url:
+
+      echo "http://$(oc get route restservice-api -o jsonpath='{.status.ingress[0].host}' --namespace {{ .Release.Namespace }})"/books"   
